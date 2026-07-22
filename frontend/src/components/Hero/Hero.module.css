@@ -1,0 +1,158 @@
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px; /* Offset for navbar */
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.heroContent {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.greeting {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.name {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #a0a0b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInRight 1s ease-out forwards;
+}
+
+.abstractShape {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowCircle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(138,43,226,0.4) 0%, rgba(0,240,255,0) 70%);
+  filter: blur(40px);
+  animation: pulse 4s infinite alternate;
+}
+
+.glassCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transform: rotate(-5deg);
+  transition: transform 0.3s ease;
+}
+
+.glassCard:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.codeSnippet {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.codeKeyword { color: #ff7b72; }
+.codeVar { color: #79c0ff; }
+.codeOp { color: #d2a8ff; }
+.codeArray { color: #a5d6ff; }
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+@media (max-width: 992px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .description {
+    margin: 0 auto 2.5rem;
+  }
+  
+  .cta {
+    justify-content: center;
+  }
+  
+  .heroVisual {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .name {
+    font-size: 3rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .abstractShape {
+    width: 300px;
+    height: 300px;
+  }
+}

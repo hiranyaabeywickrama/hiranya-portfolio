@@ -1,0 +1,100 @@
+.aboutSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.textContent {
+  padding: 3rem;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+}
+
+.textContent p {
+  margin-bottom: 1.5rem;
+}
+
+.textContent p:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.educationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.subTitle {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  border-left: 4px solid var(--accent-purple);
+  padding-left: 1rem;
+}
+
+.eduCard {
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.eduCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 43, 226, 0.3);
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
+}
+
+.eduCard h4 {
+  color: var(--accent-cyan);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.degree {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.specialization {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.gpa {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--accent-cyan);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .textContent {
+    padding: 2rem;
+    font-size: 1.05rem;
+  }
+  
+  .eduCard {
+    padding: 1.5rem;
+  }
+}
